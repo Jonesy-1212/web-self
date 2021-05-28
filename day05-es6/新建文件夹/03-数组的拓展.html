@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let arr = [1,2,3]
+        function fn1(x,y,z){
+            console.log(x,y,z)
+        }
+        fn1(...arr)
+
+
+        console.log(...arr)
+        
+        let str = "hello"
+        console.log([...str])
+
+        //Array.of将一组数字转换成数组 弥补Array的不足
+        let arr1 = Array.of(1,2,3,4)
+        console.log(arr1)
+
+        let arr2 = [1,2,3,4,5,6,7,8]
+        /* arr2.copyWithin(1)
+        arr2.copyWithin(2)
+        arr2.copyWithin(3)
+        arr2.copyWithin(4)
+        arr2.copyWithin(5)
+        arr2.copyWithin(6)
+        arr2.copyWithin(7) */
+        for(let i = 1;i<arr2.length;i++){
+            arr2.copyWithin(i)
+        }
+        console.log(arr2)//[1, 1, 1, 1, 1, 1, 1, 1]
+
+
+        let arr3 = [1,2,3,4,5,6,7,8]
+        arr3.fill("a")
+        console.log(arr3)
+
+
+        let arr4 = ["a","b","c","d"]
+        let key = arr4.keys()
+        console.log(key)//遍历对象Array Iterator {}  用for of 取到里面的值
+        for(let k of key){
+            console.log(k)
+        }
+
+        let value = arr4.values()
+        for(let v of value){
+            console.log(v)
+        }
+
+        let entrie = arr4.entries()
+        for(let e of entrie){
+            console.log(e)
+        }
+
+
+        let arr5 = [1,2,3,true,"a",{},function(){}]
+
+        let re = arr5.find(function(item,index,arr){
+            console.log(item,index,arr)
+            return typeof item === "object"
+        })
+
+        console.log(re)
+    </script>
+</body>
+</html>

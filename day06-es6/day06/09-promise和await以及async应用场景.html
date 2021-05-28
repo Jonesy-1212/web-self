@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button id="btn">点击</button>
+    <div id="con"></div>
+    <script>
+        // 需求: 点击按钮,给服务器发送请求,请求成功,将数据渲染到页面上.请求失败,就提示用户网络异常
+        let btn = document.getElementById('btn')
+        let con = document.getElementById('con')
+
+        function getData() {
+            return new Promise((resolve, reject) => {
+                setTimeout(() => {
+                    // resolve([{
+                    //     name: "laowang",
+                    //     age: 112
+                    // }])
+                    reject('网络异常')
+                }, 2000)
+            })
+        }
+
+        btn.onclick = async function () {
+            try {
+                let data = await getData()
+                let obj = data[0]
+
+                con.innerHTML = `<h1>${obj.name}</h1><h4>${obj.age}</h4>`
+            } catch (err){
+                con.innerHTML = `<h1>${err}</h1>`
+            }
+        }
+    </script>
+</body>
+
+</html>

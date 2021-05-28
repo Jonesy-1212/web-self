@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let st = new Set([1, 2, 3, 3, 2, 1, 4, 5, 6, 4, 5, 6])
+
+        st.add(11)
+        console.log(st)
+        console.log(st.size)
+
+        console.log(st.keys())
+        for (let i of st.keys()) {
+            console.log(i)
+        }
+
+        for (let l of st.entries()) {
+            console.log(l)
+        }
+        //没有键名
+        st.forEach(function (item, index, arr) {
+            console.log(item, index, arr)
+        })
+
+        //数组去重
+        let arr = [1, 2, 2, 1, 5, 4, 2, 5, 4, 3, 6, 7]
+
+        let newArr = new Set(arr)
+        console.log(newArr) //Set(7) {1, 2, 5, 4, 3, …}  对象
+        console.log(...newArr)
+        console.log([...newArr]) //[1, 2, 5, 4, 3, 6, 7]
+        console.log(newArr === [...newArr]) //false
+
+
+        console.log([...new Set('ababbc')])
+
+
+        {
+            let p1 = {
+                name: 'lily'
+            }
+            let obj1 = {
+                id: 1,
+                [p1]: 'good',
+            }
+            console.log(obj1)
+        }
+{
+        let arr = [1, 2, 3]
+
+        function Iterator(arr) {
+            //用一个计数器，保存现在处理到哪里了
+            let index = 0
+            return {
+                next: () => {
+                    if (index < arr.length) {
+                        return {
+                            value: arr[index++],
+                            done: false,
+                        }
+                    } else {
+                        return {
+                            done: true,
+                        }
+                    }
+                },
+            }
+        }
+}
+        //只要调用这个Iterator接口，就可以依次处理成员了
+        let it = Iterator(arr)
+        console.log(it)
+        console.log(it.next())
+        console.log(it.next())
+        console.log(it.next())
+    </script>
+</body>
+
+</html>

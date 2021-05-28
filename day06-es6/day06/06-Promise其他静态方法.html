@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // console.log(Promise.resolve("123"))
+        let lastTime = Date.now()
+
+        let promise1 = new Promise((resolve, reject) => {
+            setTimeout(() => {
+                reject()
+            }, 5000)
+        })
+
+        let promise2 = new Promise((resolve, reject) => {
+            setTimeout(() => {
+                resolve()
+            }, 6000)
+        })
+
+        let promise3 = Promise.all([promise1, promise2])
+
+        console.log(promise3)
+         promise1.then(
+                () => {
+                    console.log(promise1, "成功")
+                    let nowTime = Date.now()
+                    console.log(nowTime - lastTime,"promise1")
+                }
+            )
+            .catch(
+                () => {
+                    console.log(promise1, "失败")
+                    let nowTime = Date.now()
+                    console.log(nowTime - lastTime,"promise1")
+                }
+            )
+
+
+        promise2.then(
+                () => {
+                    console.log(promise2, "成功")
+                    let nowTime = Date.now()
+                    console.log(nowTime - lastTime, "promise2")
+                }
+            )
+            .catch(
+                () => {
+                    console.log(promise2, "失败")
+                    let nowTime = Date.now()
+                    console.log(nowTime - lastTime, "promise2")
+                }
+            )
+        promise3.then(
+                () => {
+                    console.log(promise3, "成功")
+                    let nowTime = Date.now()
+                    console.log(nowTime - lastTime)
+                }
+            )
+            .catch(
+                () => {
+                    console.log(promise3, "失败")
+                    let nowTime = Date.now()
+                    console.log(nowTime - lastTime)
+                }
+            )
+    </script>
+</body>
+
+</html>

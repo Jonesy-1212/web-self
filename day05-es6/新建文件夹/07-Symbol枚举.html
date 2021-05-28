@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // let s = Symbol("a")
+        // let s1 = Symbol("b")
+        // console.log(s)
+        // console.log(s1)
+        // console.log(s === s1)
+
+        let obj1 = {
+            name: "laowang",
+            do() {
+                console.lg("eat")
+            }
+        }
+
+        obj1.name = "haha"
+        obj1.do = () => {
+            console.log("eat1")
+        }
+
+        console.log(obj1)
+
+        {
+            let obj = {
+                name: "lily", //原有对象拥有name属性
+                age: 18,
+            }
+            let name = Symbol();
+            obj[name] = "再见"; //如果直接设置，则再也获取不到这个属性了
+
+            for (let i in obj) {
+                console.log(i);
+            }
+
+            //可以使用 Object.getOwnPropertySymbols方法来拿
+            console.log(Object.getOwnPropertySymbols(obj)); //[Symbol()]
+        }
+    </script>
+</body>
+
+</html>

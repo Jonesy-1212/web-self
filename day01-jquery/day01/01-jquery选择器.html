@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+      ul li{
+        border: 1px solid palegreen;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- <div id="box"></div>
+    <p>123</p>
+    <p>abc</p>
+    <div>456</div>
+    <h5>789</h5> -->
+
+    <ul>
+      <li id="first">1</li>
+      <li>2</li>
+      <li class="test">3</li>
+      <li>4</li>
+      <li>5</li>
+      <li>6</li>
+    </ul>
+
+    <h1>123</h1>
+    <h5>345</h5>
+    <div class="box" id="box">
+      <span class="myClass"></span>
+    </div> 
+
+    <input type="text" />
+    <input type="password" />
+    <textarea name="" id="" cols="30" rows="10"></textarea>
+    <input type="checkbox" checked />
+    <input type="radio" checked />
+    <select name="" id="">
+      <option value=""></option>
+      <option value="" selected></option>
+      <option value=""></option>
+    </select>
+    <input type="submit" />
+    <button id="btn">按钮</button>
+
+    <form action="">
+      <input type="text" />
+      <!-- <input type="submit" /> -->
+      <button>按钮</button>
+    </form>
+
+    <script src="jquery-1.12.4.js"></script>
+    <script>
+      console.log($("ul li,.box,button"))
+
+      //过虑选择器
+      console.log($("ul li:eq(2)"))
+      console.log($("ul li:gt(2)"))
+      console.log($("*:empty"))
+
+      console.log($("ul li").css("border"))
+    </script>
+  </body>
+</html>

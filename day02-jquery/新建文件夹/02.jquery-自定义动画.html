@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box {
+        width: 100px;
+        height: 100px;
+        background-color: red;
+        /* display: none; */
+        position: absolute;
+      }
+    </style>
+</head>
+<body>
+    <button id="btn">点击按钮-展示动画效果</button>
+    <div id="box"></div>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+
+    <script>
+        var flag = false;
+
+        $("#btn").click(function(){
+            if (flag){
+                $("#box").stop(true).animate({
+                left:100,
+                top:200
+            },2000,"linear")
+            }else{
+                $("#box").stop(true).animate({
+                left:300,
+                top:400
+            },2000,"linear")
+            }
+
+            flag = !flag
+
+            
+            
+        })
+    </script>
+</body>
+</html>

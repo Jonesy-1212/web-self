@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function fn() {
+            this.user = '追梦子';
+            b = this
+            console.log(this)
+            // return function () {};
+        }
+        var b = null
+        var a = new fn;
+        console.log(a)
+        console.log(b)
+        console.log(a.__proto__ === fn.prototype)
+
+        
+    </script>
+</body>
+
+</html>

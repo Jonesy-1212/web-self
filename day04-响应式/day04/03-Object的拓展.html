@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        /* var  obj = {}
+        var obj1 = {
+            key:"key",
+            name:"obj1"
+        }
+
+        Object.prototype.do = function(){
+            console.log("方法")
+        }
+        var obj2 = Object.create(obj1)
+        console.log(obj1)
+        console.log(obj2)//空对象，继承obj1属性方法
+
+        console.log(obj2.key)//key
+        obj2.do()
+        obj1.do() */
+
+
+        // var obj3 = Object.create(null,{
+        //     name:{
+        //         value:"laowang",
+        //         writable:false,//可写 可改
+        //         enumerable:false,//可否枚举
+        //         configurable:true//可否删除
+        //     },
+        //     age:{
+        //         value:22,
+        //         writable:false,
+        //         enumerable:false,
+        //         configurable:false
+        //     }
+        // })
+
+        // obj3.name = "zhaosi"
+        // delete obj3.name
+
+        // console.log(obj3)
+        // console.log(obj3.name)
+        // for(var key in obj3){
+        //     console.log(obj3[key])
+        // }
+
+
+        // var obj4 = {
+        //     name:"laowang"
+        // }
+
+        // Object.defineProperty(obj4,"sex",{
+        //     value:"nan",
+        //     enumerable:true
+
+        // })
+
+        // Object.defineProperty(obj4,"name",{
+        //     value:"zhaosi"
+        // })
+        // console.log(obj4)
+
+        // for(var key in obj4){
+        //     console.log(obj4[key])
+        // }
+
+
+
+
+        // var person = {
+        //     firstName:"lawang",
+        //     lastName:"zhaosi",
+
+        //     get fullName (){
+        //         return this.firstName + " " + this.lastName
+        //     },
+
+        //     set fullName(val){
+        //         var arr = val.split(" ")
+        //         this.firstName = arr[0]
+        //         this.lastName = arr[1]
+        //     }
+        // }
+
+        // console.log(person.fullName)
+        // person.fullName = "jack ma"
+        // console.log(person)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        // let a = 1
+        // let b = 2;
+        // [a, b] = [b, a]
+        // console.log(a, b)
+
+        // let [hoo = 2, foo = hoo] = [];
+        // console.log(foo, hoo)
+
+        // let c = 2
+        // let d = 4
+        // console.log([c, d])
+
+        // let {foo: c,hoo: d} = {foo: 1,hoo: 2};
+        // // console.log(foo, hoo); //报错 Identifier 'c' has already been declared
+        // console.log(c, d); //1,2
+
+        let obj1 = {a:1,b:2}
+        let obj2 = {a:3,b:4}
+
+        let{a,b} = obj1//报错
+        console.log(a,b)//1 2 
+        // let{a,b} = obj2//报错
+
+        let{a:c,b:d} = obj2
+        console.log(c,d)//3  4
+
+
+        let { log } = console;
+        log(1);
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="btn">按钮</button>
+    <script>
+        // function fn(a,b="hello"){
+        //     console.log(a,b)
+        // }
+
+        // fn(10)
+
+
+        // function fn1 (a,b,...args){
+        //     console.log(a,b,args)
+        // }
+
+        // fn1(10,2,4324,23432,21,8)
+
+
+        //箭头函数
+
+        //传统函数定义方式
+
+        function fn3 (a,b){
+            console.log(a+b)
+        }
+
+        let fn4 = function(a,b){console.log(a+b)}
+
+        //箭头函数
+        let fn5  = (x,y) => {console.log(x+y)}
+
+        fn5(2,3)
+        console.log(fn5(2,3))
+        
+        
+        //点击按钮变色  传统函数
+        // document.getElementById('btn').onclick = function(){
+        //     let _this = this
+        //     setTimeout(function(){
+        //         _this.style.background = "red"
+        //     },1000)
+        // }
+
+        //箭头函数
+
+        document.getElementById('btn').onclick = function(){
+
+            setTimeout(() =>{
+                this.style.background = "red"
+            },1000)
+        }
+
+        let fn6 = (...args) => {
+            console.log(args)
+        }
+
+        fn6(1,2,3,4)
+    </script>
+</body>
+</html>

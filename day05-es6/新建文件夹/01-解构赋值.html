@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let arr1 = [1,2,3,4]
+        // let a = arr1[0]
+        // let b = arr1[1]
+        // let c = arr1[2]
+        // let d = arr1[3]
+        // console.log(a,b,c,d)
+
+
+        //数组解构
+
+        // let [a,b,c,d] = arr1
+        // console.log(a,b,c,d)
+
+
+        // var [foo = hoo,hoo = 2] = []
+        // console.log(foo,hoo)//undefined 2
+
+    //对象解构
+
+    // let  {foo,hoo,xxx} = {foo:"name",hoo:"age"}
+
+    // console.log(foo,hoo,xxx)
+
+
+    // let arr = [1,2,3,4]
+    // console.log([...arr])
+
+    // let arr2 = [..."hel lo"]
+    // console.log(..."hel lo")//h e l   l o
+    // console.log(arr2)// ["h", "e", "l", " ", "l", "o"]
+
+    // let aa = 1,bb = 2
+    // console.log({aa:aa,bb:bb})//{aa: 1, bb: 2}
+
+    // let arr4 = [1,false,{},"d","e"]
+    // let result = arr4.find(function(item,index,arr){
+    //     console.log(item,index,arr)
+    //     return typeof item === "string"
+    // })
+    // console.log(result)
+
+    // let obj = {
+    //     foo:"a",hoo:"b"
+    // }
+    // let {foo,hoo} = obj
+    // console.log(foo,hoo)
+    
+    // let obj1= {
+    //     foo:"aa",hoo:"bb"
+    // }
+
+    // let{foo:newFoo,hoo:newHoo} = obj1
+    // console.log(foo)
+    // console.log(newFoo)
+
+
+    //练习1：如果想要获取数组的第一个和最后一个值怎么办(使用解构赋值)
+
+    let arr = [2,3,4,112]
+
+    let {0:firstnum,[arr.length - 1]:lastnum} = arr
+
+    console.log(firstnum,lastnum)
+
+    console.log(console)//对象里有很多方法
+    let{log} = console
+
+    function fn1(x,y,z){
+        console.log(x,y,z)
+    }
+
+    fn1(...[1,2,3])
+
+    
+    </script>
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // function Person(name,age){
+        //     this.name = name;
+        //     this.age = age;
+        // }
+
+        // Person.prototype.say = function(){
+        //     console.log("say")
+        // }
+
+        // let per = new Person("laowang",22)
+        // console.log(per)
+        // console.log(per.name)
+        // console.log(per.age)
+        // per.say()
+
+
+        //继承
+        // function Student(name,age,score){
+        //     Person.call(this,name,age)
+        //     this.score = score
+        // }
+        // Student.prototype = new Person()
+        // let std = new Student("laowang",22,98)
+        // console.log(std.name)
+        // std.say()
+
+        class Person {
+            constructor(name,age){
+                this.name = name;
+                this.age = age;
+            }
+
+            say(){
+                console.log("你好， 我是" +this.name)
+            }
+        }
+
+
+        class Student extends Person{
+            constructor(name,age,score){
+                super(name,age)
+                this.score = score;
+            }
+        }
+
+        let std = new Student("laowang",22,99)
+        console.log(std.score)
+        console.log(std.name)
+        std.say()
+
+    </script>
+</body>
+</html>
